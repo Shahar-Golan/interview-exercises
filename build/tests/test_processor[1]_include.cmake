@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/golan/CLionProjects/interview-exercises/build/tests/test_processor[1]_tests.cmake")
+  include("C:/Users/golan/CLionProjects/interview-exercises/build/tests/test_processor[1]_tests.cmake")
+else()
+  add_test(test_processor_NOT_BUILT test_processor_NOT_BUILT)
+endif()

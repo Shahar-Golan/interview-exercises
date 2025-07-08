@@ -1,0 +1,10 @@
+^C:\USERS\GOLAN\CLIONPROJECTS\INTERVIEW-EXERCISES\BUILD\CMAKEFILES\166A9BBDA7953CB3C7211114EC28AEC9\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/golan/CLionProjects/interview-exercises -BC:/Users/golan/CLionProjects/interview-exercises/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/golan/CLionProjects/interview-exercises/build/UnitTestExercise.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
