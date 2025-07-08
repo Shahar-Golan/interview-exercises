@@ -1,16 +1,15 @@
 #include "processor.h"
 #include <gtest/gtest.h>
 
-// TODO: Write GoogleTest cases for example::Processor
+TEST(ProcessorTest, ValidInput) {
+    example::Config cfg{0, 100};
+    example::Processor proc(cfg);
+    int32_t out = 0;
+    EXPECT_EQ(example::ErrorCode::Success, proc(10, out));
+    EXPECT_EQ(20, out);
+}
 
-// Example test stub:
-// TEST(ProcessorTest, ValidInput) {
-//     example::Config cfg{0, 100};
-//     example::Processor proc(cfg);
-//     int32_t out = 0;
-//     EXPECT_EQ(example::ErrorCode::Success, proc(10, out));
-//     EXPECT_EQ(20, out);
-// }
+
 
 // Additional tests to add:
 // - input == minValue

@@ -7,3 +7,14 @@
 # add_executable(test_processor test_processor.cpp)
 # target_link_libraries(test_processor PRIVATE processor GTest::gtest_main)
 # gtest_discover_tests(test_processor)
+
+add_executable(test_processor test_processor.cpp)
+
+target_link_libraries(test_processor
+        PRIVATE
+        processor
+        gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(test_processor)
