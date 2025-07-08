@@ -63,3 +63,13 @@ TEST(ProcessorTest, OverflowCase2) {
     int32_t input = 1500;
     EXPECT_EQ(ErrorCode::CalculationError, proc(input, out));
 }
+
+TEST(ProcessorTest, InvalidConfigThrowsException) {
+    // Constructing Processor with minValue > maxValue should throw
+    Config badCfg{100, 0};  // invalid range
+    EXPECT_THROW({
+    Processor proc(badCfg);
+    }, std::invalid_argument);
+}
+
+

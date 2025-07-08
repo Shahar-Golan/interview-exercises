@@ -25,3 +25,20 @@ ctest
 ## Bonus question
 
 Identify an additional issue in the Processor class definition, which these unit tests cannot capture.
+
+Answer:
+There is no validation of the config range. We can insert there incorrect values like min_val > max_val and the program will crash. 
+
+A proof before I handled it:
+
+TEST(ProcessorTest, InputBelowMinValue) {
+  Config cfg{0, -100};
+  Processor proc(cfg);
+  int32_t out = 0;
+  EXPECT_EQ(ErrorCode::InvalidInput, proc(-1, out));
+}
+
+Start 4: ProcessorTest.InputBelowMinValue
+4/7 Test #4: ProcessorTest.InputBelowMinValue ...   Passed    0.01 sec
+
+

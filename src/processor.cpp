@@ -1,10 +1,15 @@
 #include "processor.h"
 #include <limits>
+#include <stdexcept>
 
 namespace example {
 
 Processor::Processor(const Config& cfg)
-    : config_(cfg) {}
+    : config_(cfg) {
+        if (cfg.minValue > cfg.maxValue) {
+            throw std::invalid_argument("Invalid config: minValue > maxValue");
+    }
+}
 
 ErrorCode Processor::operator()(int32_t input, int32_t& output) const {
     if (input < config_.minValue || input > config_.maxValue) {
